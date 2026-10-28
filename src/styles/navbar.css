@@ -1,0 +1,399 @@
+.site-header {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  width: 100%;
+  background: rgba(220, 239, 248, .95);
+  border-bottom: 1px solid rgba(7, 29, 59, .08);
+  backdrop-filter: blur(16px);
+}
+
+.nav-shell {
+  width: min(1380px, calc(100% - 56px));
+  min-height: 78px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+}
+
+/* BRAND */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+/* Circular logo */
+.brand-mark {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #E4C27F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #03203D;
+}
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+  transform: scale(2.1);
+}
+
+/* Brand text container */
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  gap: 3px;
+}
+
+/* SELVA - premium gold typography */
+.brand-copy strong {
+  display: block;
+  font-family: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: #B88935;
+  text-transform: uppercase;
+  line-height: 1.08;
+  white-space: nowrap;
+}
+
+/* TOURS AND TRAVELS with gold lines */
+.brand-copy .brand-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 7px;
+  margin-top: 3px;
+}
+
+.brand-tagline {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2.4px;
+  color: #173354;
+  white-space: nowrap;
+}
+
+.brand-line {
+  display: block;
+  flex: 1;
+  min-width: 12px;
+  height: 2px;
+  background: #C49A42;
+}
+
+/* NAVIGATION */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown>.nav-link {
+  gap: 5px;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  z-index: 60;
+  top: 100%;
+  left: 0;
+  display: none;
+  min-width: 245px;
+  padding: 7px;
+  border: 1px solid rgba(7, 29, 59, .1);
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(7, 29, 59, .14);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: grid;
+}
+
+.nav-dropdown-link {
+  padding: 11px 12px;
+  color: var(--deep-blue);
+  font-size: 11px;
+  line-height: 1.35;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.nav-dropdown-link:hover,
+.nav-dropdown-link.active {
+  color: #8C6825;
+  background: rgba(212, 175, 98, .12);
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 39px;
+  padding: 0 10px;
+  color: var(--deep-blue);
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 250ms ease, background-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  bottom: 4px;
+  left: 10px;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms ease;
+}
+
+.nav-link:hover {
+  color: #8C6825;
+  background: rgba(212, 175, 98, .12);
+  box-shadow: 0 0 14px rgba(212, 175, 98, .18);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active {
+  color: #8C6825;
+}
+
+/* ENQUIRE BUTTON */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 41px;
+  padding: 0 16px;
+  color: var(--navy);
+  background: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.nav-cta:hover {
+  background: var(--light-gold);
+  transform: translateY(-1px);
+}
+
+.nav-cta span {
+  font-size: 15px;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+/* TABLET / SMALL LAPTOP */
+@media (max-width: 1100px) {
+  .nav-shell {
+    width: calc(100% - 36px);
+    gap: 14px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 54px;
+    height: 54px;
+  }
+
+  .brand-copy strong {
+    font-size: 32px;
+    letter-spacing: 3px;
+  }
+
+  .brand-tagline {
+    font-size: 8px;
+    letter-spacing: 1.7px;
+  }
+
+  .brand-copy .brand-subtitle {
+    gap: 5px;
+  }
+
+  .main-nav {
+    gap: 10px;
+  }
+
+  .nav-link {
+    padding-inline: 7px;
+    font-size: 9px;
+  }
+
+  .nav-link::after {
+    right: 7px;
+    left: 7px;
+  }
+
+  .nav-cta {
+    padding-inline: 11px;
+  }
+}
+
+/* MOBILE NAVIGATION */
+@media (max-width: 900px) {
+  .nav-shell {
+    min-height: 70px;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 14px 20px 22px;
+    background: rgba(220, 239, 248, .98);
+    border-top: 1px solid rgba(7, 29, 59, .08);
+    box-shadow: 0 14px 24px rgba(7, 29, 59, .1);
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .nav-link {
+    min-height: 44px;
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+
+  .nav-link::after {
+    right: 12px;
+    left: 12px;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    display: grid;
+    min-width: 0;
+    padding: 0 0 4px 10px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    display: grid;
+  }
+
+  .nav-dropdown-link {
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+
+  .nav-cta {
+    justify-content: center;
+    min-height: 45px;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 430px) {
+  .nav-shell {
+    width: calc(100% - 20px);
+    gap: 6px;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-copy strong {
+    font-size: 25px;
+    letter-spacing: 2px;
+  }
+
+  .brand-tagline {
+    font-size: 7px;
+    letter-spacing: 1.1px;
+  }
+
+  .brand-copy .brand-subtitle {
+    gap: 4px;
+  }
+
+  .brand-line {
+    min-width: 8px;
+    height: 1px;
+  }
+
+  .nav-links {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-link {
+    min-height: 39px;
+  }
+}

@@ -1,0 +1,596 @@
+.tariff-hero {
+  position: relative;
+  display: flex;
+  min-height: 340px;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--navy);
+  background-image:
+    linear-gradient(90deg, rgba(7, 29, 59, .93) 0%, rgba(7, 29, 59, .75) 48%, rgba(7, 29, 59, .3) 100%),
+    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=85');
+  background-position: center 56%;
+  background-size: cover;
+}
+
+.tariff-hero-content {
+  position: relative;
+  z-index: 1;
+  padding-block: 65px;
+}
+
+.tariff-hero .eyebrow {
+  color: var(--light-gold);
+}
+
+.tariff-hero h1 {
+  max-width: 760px;
+  margin-top: 15px;
+  color: #fff;
+  font-size: clamp(38px, 5.4vw, 59px);
+  line-height: 1.1;
+}
+
+.tariff-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
+  color: rgba(255, 255, 255, .72);
+  font-size: 11px;
+}
+
+.tariff-breadcrumbs a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  transition: color 180ms ease;
+}
+
+.tariff-breadcrumbs a:hover {
+  color: var(--light-gold);
+}
+
+.tariff-breadcrumbs > svg {
+  color: var(--light-gold);
+}
+
+.tariff-page-content {
+  padding-block: 70px 90px;
+  background: var(--light);
+}
+
+.tariff-layout {
+  display: grid;
+  grid-template-columns: 255px minmax(0, 1fr);
+  align-items: start;
+  gap: 34px;
+}
+
+.tariff-main-content {
+  min-width: 0;
+  padding: 33px;
+  background: #fff;
+  border: 1px solid #e5edf2;
+  box-shadow: 0 8px 28px rgba(7, 29, 59, .045);
+}
+
+.tariff-introduction {
+  margin-bottom: 32px;
+  color: #536579;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.tariff-content-heading {
+  margin-bottom: 21px;
+}
+
+.tariff-content-heading h2,
+.corporate-form-heading h2 {
+  margin-top: 9px;
+  color: var(--navy);
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.2;
+}
+
+.tariff-data-section > .tariff-content-heading h2 {
+  color: #8c6825;
+}
+
+.tariff-content-heading > p:last-child,
+.corporate-form-heading > p:last-child {
+  max-width: 740px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.tariff-approval-notice {
+  margin: 0 0 22px;
+  padding: 15px 17px;
+  border-left: 3px solid var(--gold);
+  color: #4f6071;
+  background: #fbf7eb;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.tariff-package-group + .tariff-package-group {
+  margin-top: 27px;
+}
+
+.tariff-package-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 11px;
+}
+
+.tariff-package-heading h3 {
+  flex: 0 0 auto;
+  color: var(--navy);
+  font-size: 16px;
+}
+
+.tariff-package-heading p {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.tariff-package-heading p span {
+  margin-inline: 4px;
+  color: var(--gold);
+}
+
+.tariff-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e3eaf0;
+  scrollbar-color: var(--gold) #eff3f6;
+}
+
+.tariff-data-table {
+  width: 100%;
+  min-width: 1050px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.tariff-data-table th,
+.tariff-data-table td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #e9eef2;
+  color: #536579;
+  font-size: 10px;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.tariff-data-table thead th {
+  color: var(--navy);
+  background: #eef2f4;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.tariff-data-table tbody tr:last-child th,
+.tariff-data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.tariff-data-table tbody th {
+  min-width: 120px;
+  color: var(--navy);
+  font-size: 11px;
+}
+
+.tariff-duplicate-note {
+  display: block;
+  max-width: 220px;
+  margin-top: 6px;
+  color: #8c6825;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.tariff-vehicle-image {
+  width: 86px;
+  height: 56px;
+  object-fit: cover;
+  background: var(--pale-sky);
+}
+
+.tariff-enquire-button {
+  min-height: 36px;
+  gap: 6px;
+  padding-inline: 10px;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.tariff-table-note {
+  margin-top: 12px;
+  color: #778698;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.tariff-terms {
+  margin-top: 47px;
+  padding-top: 35px;
+  border-top: 1px solid #e6edf1;
+}
+
+.tariff-terms-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 22px;
+  color: var(--navy);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.tariff-terms-note {
+  margin: 0 0 7px;
+  color: var(--navy);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.tariff-sidebar {
+  min-width: 0;
+  padding: 24px 20px;
+  border: 1px solid #dbeaf2;
+  background: var(--pale-sky);
+}
+
+.tariff-sidebar h2 {
+  margin-bottom: 15px;
+  color: #8c6825;
+  font-size: 13px;
+  letter-spacing: .08em;
+  line-height: 1.4;
+}
+
+.tariff-sidebar .tariff-sidebar-subheading {
+  margin-top: 27px;
+}
+
+.tariff-sidebar nav {
+  display: grid;
+}
+
+.tariff-sidebar-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  padding: 13px 1px;
+  border-bottom: 1px solid rgba(7, 29, 59, .1);
+  color: var(--deep-blue);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.45;
+  transition: color 180ms ease, padding 180ms ease;
+}
+
+.tariff-sidebar-link svg {
+  flex: 0 0 auto;
+  color: #98732d;
+}
+
+.tariff-sidebar-link:hover,
+.tariff-sidebar-link.active {
+  padding-left: 7px;
+  color: #8c6825;
+}
+
+.tariff-sidebar-link.active {
+  border-left: 2px solid var(--gold);
+  padding-left: 9px;
+}
+
+.tariff-package-link {
+  padding-block: 10px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.tariff-sidebar > p {
+  margin-top: 18px;
+  color: #5b6d7f;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.corporate-topic-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.corporate-topic {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 17px;
+  border: 1px solid #e6edf1;
+  background: #fbfdfe;
+}
+
+.corporate-topic > span {
+  flex: 0 0 auto;
+  color: #98732d;
+  font-family: var(--serif);
+  font-size: 19px;
+}
+
+.corporate-topic h3 {
+  color: var(--navy);
+  font-size: 12px;
+}
+
+.corporate-topic p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.corporate-form {
+  padding: 25px;
+  border: 1px solid #e3eaf0;
+  background: #f9fbfc;
+}
+
+.corporate-form-heading {
+  margin-bottom: 22px;
+}
+
+.corporate-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.corporate-form-grid label {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.corporate-form-grid label > span {
+  display: inline;
+  color: #9b7328;
+}
+
+.corporate-form-grid input,
+.corporate-form-grid textarea {
+  width: 100%;
+  min-height: 43px;
+  padding: 10px 12px;
+  border: 1px solid #d9e3e9;
+  border-radius: 0;
+  color: var(--body);
+  background: #fff;
+  font: inherit;
+  font-size: 12px;
+}
+
+.corporate-form-grid textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+.corporate-form-grid input:focus,
+.corporate-form-grid textarea:focus {
+  border-color: #98732d;
+  outline: 2px solid rgba(212, 175, 98, .3);
+  outline-offset: 1px;
+}
+
+.corporate-form-wide {
+  grid-column: 1 / -1;
+}
+
+.corporate-submit {
+  margin-top: 20px;
+}
+
+.corporate-form-feedback {
+  margin-top: 16px;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.corporate-form-feedback.is-error {
+  color: #a83232;
+}
+
+.corporate-form-feedback.is-success {
+  color: #246a48;
+}
+
+.corporate-form-feedback a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 7px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.corporate-config-note {
+  margin-top: 13px;
+  color: #778698;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.corporate-contact-block {
+  padding: 25px;
+  border: 1px solid #e3eaf0;
+  background: #f9fbfc;
+}
+
+.corporate-contact-block .tariff-content-heading {
+  margin-bottom: 16px;
+}
+
+.corporate-contact-details {
+  display: grid;
+  gap: 12px;
+  padding-block: 16px;
+  border-block: 1px solid #e3eaf0;
+}
+
+.corporate-contact-details p {
+  color: #526579;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.corporate-contact-details strong {
+  display: inline-block;
+  min-width: 62px;
+  color: var(--navy);
+}
+
+.corporate-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 20px;
+}
+
+.corporate-contact-actions button:disabled {
+  cursor: not-allowed;
+  opacity: .62;
+}
+
+.corporate-contact-note,
+.corporate-contact-followup {
+  margin-top: 14px;
+  color: #778698;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.corporate-contact-followup a {
+  color: var(--deep-blue);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 980px) {
+  .tariff-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .tariff-main-content {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 760px) {
+  .tariff-hero {
+    min-height: 310px;
+    background-position: 61% center;
+  }
+
+  .tariff-hero-content {
+    padding-block: 54px;
+  }
+
+  .tariff-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tariff-sidebar {
+    grid-row: 1;
+  }
+
+  .tariff-sidebar nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+  }
+
+  .tariff-sidebar-link {
+    align-items: flex-start;
+  }
+
+  .tariff-main-content {
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 540px) {
+  .tariff-hero {
+    min-height: 280px;
+    background-position: 64% center;
+  }
+
+  .tariff-hero h1 {
+    font-size: 38px;
+  }
+
+  .tariff-page-content {
+    padding-block: 42px 60px;
+  }
+
+  .tariff-main-content {
+    padding: 21px 16px;
+  }
+
+  .tariff-introduction {
+    margin-bottom: 26px;
+    font-size: 13px;
+  }
+
+  .tariff-package-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .tariff-sidebar {
+    padding: 20px 17px;
+  }
+
+  .tariff-sidebar nav,
+  .corporate-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .corporate-form {
+    padding: 20px 15px;
+  }
+
+  .corporate-contact-block {
+    padding: 20px 15px;
+  }
+
+  .corporate-form-wide {
+    grid-column: auto;
+  }
+
+  .tariff-terms {
+    margin-top: 35px;
+    padding-top: 27px;
+  }
+}
