@@ -18,7 +18,7 @@ const faqs = [
   ['What tour packages are available from Coimbatore?', 'Destinations shown on this page are suggestions. Contact the business to confirm current routes, availability, and arrangements.'],
   ['Do you offer one-day and multi-day tours?', 'You can enquire about different trip durations, from one day to longer journeys. Availability and details must be confirmed directly.'],
   ['Can I customise my itinerary?', 'Share your preferred destinations, dates, and stops to discuss possible itinerary options.'],
-  ['How much does a tour package cost?', 'No package prices are published here. Request a quotation based on your route, duration, vehicle requirements, and other trip details.'],
+  ['How much does a tour package cost?', 'One-day package pages show vehicle rates for each route. Confirm the current STT quotation, vehicle availability, and applicable charges directly; longer-duration routes require a trip-specific quotation.'],
   ['Can families and groups enquire?', 'Yes, enquiries can include family or group travel requirements. Vehicle availability and suitability need to be confirmed.'],
   ['How do I contact you about a package?', 'Use the contact form or WhatsApp enquiry option, if configured, and mention your destination and travel dates.'],
 ]

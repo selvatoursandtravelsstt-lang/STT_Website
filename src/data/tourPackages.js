@@ -82,12 +82,6 @@ const referenceRoute = (id, duration, title, destination, image = 'hills') => ro
 )
 
 export const tourPackages = [
-  route('coimbatore-kochi-one-day', 'one-day', 'Coimbatore – Kochi – Coimbatore', 'Kochi', 'Suggested day-trip route; travel time and feasibility require confirmation.', 'https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=1000&q=85', 'Green Western Ghats landscape'),
-  route('coimbatore-chennai-one-day', 'one-day', 'Coimbatore – Chennai – Coimbatore', 'Chennai', 'Suggested route example only; confirm trip details with the business.', 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1000&q=85', 'Historic South Indian architecture'),
-  route('coimbatore-bangalore-one-day', 'one-day', 'Coimbatore – Bangalore – Coimbatore', 'Bangalore', 'Suggested route example only; confirm trip details with the business.', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85', 'Scenic road through a green landscape'),
-  route('coimbatore-ooty-one-day', 'one-day', 'Coimbatore – Ooty – Coimbatore', 'Ooty', 'A suggested hill-country route; destinations and timing are to be confirmed.', 'https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=1000&q=85', 'Tea-country hills in the Western Ghats'),
-  route('coimbatore-valparai-one-day', 'one-day', 'Coimbatore – Valparai – Coimbatore', 'Valparai', 'A suggested hill-country route; destinations and timing are to be confirmed.', 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85', 'Lush green forest landscape'),
-  route('coimbatore-munnar-one-day', 'one-day', 'Coimbatore – Munnar – Coimbatore', 'Munnar', 'A suggested hill-country route; destinations and timing are to be confirmed.', 'https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=1000&q=85', 'Mountain greenery and tea-country scenery'),
   route('coimbatore-ooty-two-days', 'two-days', 'Coimbatore – Ooty – Coonoor – Coimbatore', 'Ooty & Coonoor', 'Suggested two-day hill-country route; no fixed itinerary is offered.', 'https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=1000&q=85', 'Western Ghats tea-country hills'),
   route('coimbatore-valparai-two-days', 'two-days', 'Coimbatore – Valparai – Coimbatore', 'Valparai', 'Suggested two-day hill-country route; no fixed itinerary is offered.', 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85', 'Lush green forest landscape'),
   route('coimbatore-madurai-two-days', 'two-days', 'Coimbatore – Madurai – Coimbatore', 'Madurai', 'Suggested cultural trip route; confirm destinations and travel arrangements.', 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1000&q=85', 'Traditional South Indian temple architecture'),
@@ -106,15 +100,6 @@ export const tourPackages = [
   route('coimbatore-tamil-nadu-seven-days', 'seven-days', 'Coimbatore – Madurai – Rameswaram – Thanjavur – Coimbatore', 'Tamil Nadu', 'Suggested multi-day route; confirm destinations, schedule, and feasibility.', 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1000&q=85', 'Traditional South Indian temple architecture'),
   route('coimbatore-south-india-eight-days', 'eight-days', 'Coimbatore – Ooty – Mysuru – Coorg – Coimbatore', 'Ooty, Mysuru & Coorg', 'Suggested eight-day route; itinerary and feasibility require confirmation.', 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85', 'Green forest and hill-country scenery'),
   route('coimbatore-kerala-eight-days', 'eight-days', 'Coimbatore – Munnar – Thekkady – Alleppey – Kochi – Coimbatore', 'Kerala', 'Suggested multi-day route; confirm destinations and travel arrangements.', 'https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=1000&q=85', 'Western Ghats tea-country hills'),
-  referenceRoute('coimbatore-kodaikanal-one-day', 'one-day', 'Coimbatore – Kodaikanal – Coimbatore', 'Kodaikanal'),
-  referenceRoute('coimbatore-palani-one-day', 'one-day', 'Coimbatore – Palani – Coimbatore', 'Palani', 'heritage'),
-  referenceRoute('coimbatore-black-thunder-one-day', 'one-day', 'Coimbatore – Black Thunder – Coimbatore', 'Black Thunder', 'nature'),
-  referenceRoute('coimbatore-guruvayur-one-day', 'one-day', 'Coimbatore – Guruvayur – Coimbatore', 'Guruvayur', 'heritage'),
-  referenceRoute('coimbatore-mysore-one-day', 'one-day', 'Coimbatore – Mysore – Coimbatore', 'Mysore', 'heritage'),
-  referenceRoute('coimbatore-yercaud-one-day', 'one-day', 'Coimbatore – Yercaud – Coimbatore', 'Yercaud'),
-  referenceRoute('coimbatore-athirapalli-malampuzha-one-day', 'one-day', 'Coimbatore – Athirapalli – Malampuzha – Coimbatore', 'Athirapalli & Malampuzha', 'nature'),
-  referenceRoute('coimbatore-parambikulam-topslip-one-day', 'one-day', 'Coimbatore – Parambikulam – Topslip – Coimbatore', 'Parambikulam & Topslip', 'nature'),
-  referenceRoute('coimbatore-madurai-palani-one-day', 'one-day', 'Coimbatore – Madurai – Palani – Coimbatore', 'Madurai & Palani', 'heritage'),
   referenceRoute('coimbatore-tirupati-two-days', 'two-days', 'Coimbatore – Tirupati – Coimbatore', 'Tirupati', 'heritage'),
   referenceRoute('coimbatore-ooty-two-days-direct', 'two-days', 'Coimbatore – Ooty – Coimbatore', 'Ooty'),
   referenceRoute('coimbatore-kodaikanal-two-days', 'two-days', 'Coimbatore – Kodaikanal – Coimbatore', 'Kodaikanal'),

@@ -20,6 +20,7 @@ import './styles/tariff.css'
 import './styles/contact.css'
 import './styles/brief.css'
 import './styles/duration-packages.css'
+import './styles/one-day-packages.css'
 import './styles/gallery.css'
 
 const pageMeta = {
@@ -51,7 +52,10 @@ function PageMeta() {
     const durationId = pathname.match(/^\/tour-packages\/([^/]+)$/)?.[1]
     const duration = tourPackageDurations.find(({ id }) => id === durationId)
     const [title, description] = duration
-      ? [`${duration.pageTitle} from Coimbatore | Selva Tours and Travels`, `Explore illustrative ${duration.label.toLowerCase()} tour routes from Coimbatore. Confirm routes, vehicle options, rates, and availability directly with Selva Tours and Travels.`]
+      ? [
+        `${duration.pageTitle} from Coimbatore | Selva Tours and Travels`,
+        `Review ${duration.label.toLowerCase()} tour routes, itineraries, and vehicle rates from Coimbatore. Confirm current prices and availability directly with Selva Tours and Travels.`,
+      ]
       : pageMeta[pathname] || pageMeta['/']
     document.title = title
     let descriptionTag = document.querySelector('meta[name="description"]')

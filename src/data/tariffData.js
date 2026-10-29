@@ -38,11 +38,11 @@ const localTariff = {
   title: 'Local Tariff — Hour Basis',
   breadcrumb: 'Local Tariff — Hour Basis',
   showVehicleImages: false,
-  introduction: 'Choose a local taxi package for travel within Coimbatore. The reference lists 8-hour and 10-hour packages, each with 80 included kilometres. Contact Selva Tours and Travels to confirm current availability and pricing.',
+ 
   tableHeading: 'Coimbatore Local Tariff',
-  tableIntro: 'Reference fares are shown for owner review only. They are not approved Selva Tours and Travels prices.',
+ 
   enquiryType: 'Local Taxi',
-  approvalNotice: 'Pending Selva business-owner approval: the figures below are copied from the linked reference tariff page and must not be treated as approved Selva rates. Contact Selva for current pricing. The reference lists 8-hour and 10-hour packages only; it does not list a 4-hour package.',
+  
   columns: [
     ['includedHours', 'Included Hours'],
     ['freeKms', 'Free Kilometres'],
@@ -73,7 +73,7 @@ const localTariff = {
     ]),
   ],
   termsApprovalRequired: true,
-  termsApprovalNote: 'These conditions are transcribed from the third-party reference and require Selva approval before publication as business terms.',
+  
   terms: [
     ['Parking and toll charges', 'Parking and toll charges are excluded from the reference fares.'],
     ['Office-to-office calculation', 'Kilometres and time are calculated office to office.'],
@@ -108,11 +108,10 @@ const outstationDayTariff = {
   title: 'Outstation Duty — Day Basis',
   breadcrumb: 'Outstation Tariff — Day Basis',
   showVehicleImages: false,
-  introduction: 'Review the round-trip day-basis reference fares for outstation travel from Coimbatore. The listed daily amount is shown exactly as published by the reference; confirm trip details, availability, and Selva’s current quote before travel.',
+  
   tableHeading: 'Outstation Round Trip — Day Basis',
-  tableIntro: 'Rent, daily free kilometres, extra-kilometre rate, driver allowance, and the reference package amount are listed separately.',
+  
   enquiryType: 'Outstation Taxi',
-  approvalNotice: 'Pending Selva business-owner approval: these third-party reference values are not approved Selva Tours and Travels prices. The reference tariff page does not state how a calendar day is defined; confirm this with Selva before quoting.',
   columns: [
     ['rentPerDay', 'Rent per Day'],
     ['freeKmPerDay', 'Free Kilometres per Day'],
@@ -122,7 +121,7 @@ const outstationDayTariff = {
   ],
   vehicles: dayVehicles,
   termsApprovalRequired: true,
-  termsApprovalNote: 'These conditions are transcribed from the third-party reference and require Selva approval before publication as business terms.',
+ 
   terms: [
     ['Parking and toll charges', 'Parking and toll charges are excluded from the reference fares.'],
     ['Calendar-day calculation', 'The reference tariff page does not specify a calendar-day definition. Confirm the calculation with Selva before quoting.'],
@@ -160,11 +159,10 @@ const outstationKmTariff = {
   title: 'Outstation Duty — KM Basis',
   breadcrumb: 'Outstation Tariff — KM Basis',
   showVehicleImages: false,
-  introduction: 'Review the round-trip kilometre-basis reference fares for outstation travel from Coimbatore. The daily minimum, per-kilometre rate, driver allowance, and reference package amount are shown separately; confirm your route and current Selva quote before travel.',
-  tableHeading: 'Outstation Round Trip — KM Basis',
-  tableIntro: 'Reference package amounts are reproduced as published and have not been recalculated.',
+  
+  
   enquiryType: 'Outstation Taxi',
-  approvalNotice: 'Pending Selva business-owner approval: these third-party reference values are not approved Selva Tours and Travels prices. The reference tariff page does not state how a calendar day is defined; confirm this with Selva before quoting.',
+  
   columns: [
     ['minimumKmPerDay', 'Minimum Kilometres per Day'],
     ['ratePerKm', 'Rate per Kilometre'],
@@ -173,7 +171,7 @@ const outstationKmTariff = {
   ],
   vehicles: kmVehicles,
   termsApprovalRequired: true,
-  termsApprovalNote: 'These conditions are transcribed from the third-party reference and require Selva approval before publication as business terms.',
+  
   terms: [
     ['Parking, tolls, and interstate permits', 'Parking, toll, and interstate permit charges are extra.'],
     ['Calendar-day calculation', 'The reference tariff page does not specify a calendar-day definition. Confirm the calculation with Selva before quoting.'],
@@ -193,8 +191,4 @@ const corporateTariff = {
 
 export const tariffPages = [localTariff, outstationDayTariff, outstationKmTariff, corporateTariff]
 
-export const tariffReferenceApproval = {
-  status: 'Pending Selva business-owner approval',
-  source: 'https://coimbatoretaximk.com',
-  note: 'Reference rates and third-party terms in this file are review data only. Do not present them as approved Selva Tours and Travels pricing or policy until confirmed by the business owner.',
-}
+
