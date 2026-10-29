@@ -122,6 +122,40 @@
   margin-top: 27px;
 }
 
+.tariff-package-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e3eaf0;
+}
+
+.tariff-package-tab {
+  min-height: 42px;
+  padding: 9px 15px;
+  border: 1px solid #dce5eb;
+  border-bottom: 0;
+  color: var(--deep-blue);
+  background: #f7fafc;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tariff-package-tab.active {
+  border-color: var(--gold);
+  color: var(--navy);
+  background: #fff;
+  box-shadow: inset 0 3px 0 var(--gold);
+}
+
+.tariff-package-inclusions {
+  margin-bottom: 13px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .tariff-package-heading {
   display: flex;
   align-items: baseline;
@@ -214,6 +248,26 @@
   white-space: nowrap;
 }
 
+.tariff-enquiry-actions {
+  display: grid;
+  justify-items: start;
+  gap: 7px;
+}
+
+.tariff-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--deep-blue);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tariff-whatsapp-link:hover {
+  color: #8c6825;
+}
+
 .tariff-table-note {
   margin-top: 12px;
   color: #778698;
@@ -238,10 +292,13 @@
 }
 
 .tariff-terms-note {
-  margin: 0 0 7px;
-  color: var(--navy);
-  font-size: 13px;
-  line-height: 1.5;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--gold);
+  color: #6b5425;
+  background: #fbf7eb;
+  font-size: 11px;
+  line-height: 1.65;
 }
 
 .tariff-sidebar {
@@ -566,6 +623,10 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 5px;
+  }
+
+  .tariff-package-tab {
+    flex: 1 1 130px;
   }
 
   .tariff-sidebar {

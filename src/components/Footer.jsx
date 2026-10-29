@@ -27,7 +27,7 @@ function Footer() {
         </div>
         <div className="footer-links">
           <h2>Travel ideas</h2>
-          <Link to="/tariff/local-hours">Local tariff — hours basis</Link>
+          <Link to="/tariff/local-hours">Local tariff — hour basis</Link>
           <Link to="/tariff/outstation-day">Outstation tariff — day basis</Link>
           <Link to="/tariff/outstation-km">Outstation tariff — KM basis</Link>
           <Link to="/tariff/corporate">Corporate cab bookings</Link>

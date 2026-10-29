@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import WhatsAppEnquiryButton from './WhatsAppEnquiryButton.jsx'
 
 function displayValue(value, key) {
@@ -5,15 +6,18 @@ function displayValue(value, key) {
     return 'Contact for Rates'
   }
   if (typeof value === 'number') {
-    if (['hours', 'freeKms', 'freeKmPerDay', 'minimumKmPerDay'].includes(key)) {
-      return key === 'hours' ? `${value} Hours` : `${value} km`
+    if (['includedHours', 'freeKms', 'freeKmPerDay', 'minimumKmPerDay'].includes(key)) {
+      return key === 'includedHours' ? `${value} hours` : `${value} km`
     }
     const formatted = new Intl.NumberFormat('en-IN', {
       style: 'currency',
       currency: 'INR',
-      maximumFractionDigits: 0,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
     }).format(value)
-    return ['extraKilometreCharge', 'ratePerKm'].includes(key) ? `${formatted}/km` : formatted
+    if (key === 'ratePerKm' || key === 'extraKilometreCharge') return `${formatted}/km`
+    if (key === 'extraHourCharge') return `${formatted}/hour`
+    return formatted
   }
   return value
 }
@@ -41,27 +45,27 @@ function PackageTable({ tariff, packageGroup }) {
           <thead>
             <tr>
               {tariff.showVehicleImages !== false && <th scope="col">Vehicle Image</th>}
-              <th scope="col">Vehicle Name</th>
+              <th scope="col">Vehicle</th>
+              <th scope="col">Category / Seating</th>
               {tariff.columns.map(([, label]) => <th scope="col" key={label}>{label}</th>)}
-              <th scope="col">WhatsApp Enquiry</th>
+              <th scope="col">Enquiry</th>
             </tr>
           </thead>
           <tbody>
             {packageGroup.vehicles.map((vehicle) => (
-              <tr key={vehicle.type}>
+              <tr key={vehicle.id}>
                 <VehicleImageCell tariff={tariff} vehicle={vehicle} />
-                <th scope="row">
-                  {vehicle.type}
-                  {vehicle.duplicateNote && <small className="tariff-duplicate-note">{vehicle.duplicateNote}</small>}
-                </th>
+                <th scope="row">{vehicle.type}{vehicle.referenceNote && <small className="tariff-duplicate-note">{vehicle.referenceNote}</small>}</th>
+                <td>{vehicle.category}</td>
                 {tariff.columns.map(([key]) => <td key={key}>{displayValue(vehicle[key], key)}</td>)}
                 <td>
                   <WhatsAppEnquiryButton
                     category={tariff.title}
                     vehicle={vehicle.type}
                     packageGroup={packageGroup.name}
-                    packageAmount={vehicle.totalAmount ?? vehicle.baseFare}
+                    packageAmount={vehicle.packageFare}
                     rateDetails={enquiryDetailsFor(vehicle, tariff.columns)}
+                    enquiryType={tariff.enquiryType}
                   />
                 </td>
               </tr>
@@ -74,6 +78,11 @@ function PackageTable({ tariff, packageGroup }) {
 }
 
 function TariffTable({ tariff }) {
+  const [selectedPackageId, setSelectedPackageId] = useState(
+    tariff.packages?.find(({ hours }) => hours === 10)?.id || tariff.packages?.[0]?.id || '',
+  )
+  const selectedPackage = tariff.packages?.find(({ id }) => id === selectedPackageId)
+
   return (
     <section className="tariff-data-section" aria-labelledby="tariff-table-title">
       <div className="tariff-content-heading">
@@ -83,7 +92,31 @@ function TariffTable({ tariff }) {
       </div>
       {tariff.approvalNotice && <p className="tariff-approval-notice" role="note">{tariff.approvalNotice}</p>}
       {tariff.packages
-        ? tariff.packages.map((packageGroup) => <PackageTable key={packageGroup.id} tariff={tariff} packageGroup={packageGroup} />)
+        ? (
+          <>
+            <div className="tariff-package-tabs" role="group" aria-label="Local duty package duration">
+              {tariff.packages.map((packageGroup) => (
+                <button
+                  aria-controls={`${packageGroup.id}-panel`}
+                  aria-pressed={selectedPackageId === packageGroup.id}
+                  className={`tariff-package-tab${selectedPackageId === packageGroup.id ? ' active' : ''}`}
+                  id={`${packageGroup.id}-tab`}
+                  key={packageGroup.id}
+                  onClick={() => setSelectedPackageId(packageGroup.id)}
+                  type="button"
+                >
+                  {packageGroup.hours} Hours
+                </button>
+              ))}
+            </div>
+            {selectedPackage && (
+              <div aria-labelledby={`${selectedPackage.id}-tab`} id={`${selectedPackage.id}-panel`}>
+                <p className="tariff-package-inclusions">Includes {selectedPackage.includedHours} hours and {selectedPackage.freeKms} kilometres per package.</p>
+                <PackageTable tariff={tariff} packageGroup={selectedPackage} />
+              </div>
+            )}
+          </>
+        )
         : (
           <>
             <div className="tariff-table-scroll" role="region" aria-label={`${tariff.title} vehicle tariff table`} tabIndex="0">
@@ -91,7 +124,8 @@ function TariffTable({ tariff }) {
                 <thead>
                   <tr>
                     {tariff.showVehicleImages !== false && <th scope="col">Vehicle Image</th>}
-                    <th scope="col">Vehicles</th>
+                    <th scope="col">Vehicle</th>
+                    <th scope="col">Category / Seating</th>
                     {tariff.columns.map(([, label]) => <th scope="col" key={label}>{label}</th>)}
                     <th scope="col">Enquiry</th>
                   </tr>
@@ -100,17 +134,16 @@ function TariffTable({ tariff }) {
                   {tariff.vehicles.map((vehicle) => (
                     <tr key={vehicle.id || vehicle.type}>
                       <VehicleImageCell tariff={tariff} vehicle={vehicle} />
-                      <th scope="row">
-                        {vehicle.type}
-                        {vehicle.duplicateNote && <small className="tariff-duplicate-note">{vehicle.duplicateNote}</small>}
-                      </th>
+                      <th scope="row">{vehicle.type}</th>
+                      <td>{vehicle.category}</td>
                       {tariff.columns.map(([key]) => <td key={key}>{displayValue(vehicle[key], key)}</td>)}
                       <td>
                         <WhatsAppEnquiryButton
                           category={tariff.title}
                           vehicle={vehicle.type}
-                          packageAmount={vehicle.totalAmount ?? vehicle.baseFare}
+                          packageAmount={vehicle.packageAmount ?? vehicle.totalAmount ?? vehicle.baseFare}
                           rateDetails={enquiryDetailsFor(vehicle, tariff.columns)}
+                          enquiryType={tariff.enquiryType}
                         />
                       </td>
                     </tr>

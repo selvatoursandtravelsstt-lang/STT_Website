@@ -14,7 +14,7 @@ function Contact() {
   const email = emailHref()
   const wa = whatsappHref('Hello, I would like to enquire about Selva Tours and Travels.')
   const duration = searchParams.get('duration')
-  const initialMessage = duration ? `I would like to enquire about a ${duration}-day tour.` : ''
+  const initialMessage = searchParams.get('message') || (duration ? `I would like to enquire about a ${duration}-day tour.` : '')
   const initialType = searchParams.get('type') || ''
   const initialDestination = searchParams.get('destination') || searchParams.get('category') || ''
 

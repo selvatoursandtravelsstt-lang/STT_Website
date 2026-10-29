@@ -15,7 +15,7 @@ const trailingLinks = [
 ]
 
 const tariffLinks = [
-  ['/tariff/local-hours', 'Local Tariff — Hours Basis'],
+  ['/tariff/local-hours', 'Local Tariff — Hour Basis'],
   ['/tariff/outstation-day', 'Outstation Tariff — Day Basis'],
   ['/tariff/outstation-km', 'Outstation Tariff — KM Basis'],
   ['/tariff/corporate', 'Corporate Cab Bookings'],
